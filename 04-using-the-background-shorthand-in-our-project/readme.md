@@ -1,7 +1,21 @@
-## Aplicando background-origin, background-clip e background-attachment
+### Usando a propriedade background de forma abreviada.
 
-- O *background-origin* é bem parecido com a propriedade *box-sizing*, ela diz até onde a imagem de fundo deve contabilizar para poder preencher o elemento, por padrão é definido como __padding-box__, onde a imagem preencherá o elemento até chegar no limite do padding com a borda, temos também o valor __border-box__ onde a imagem preencherá o elemento até o limite da borda com a margem, e por fim temos o __content-box__ que é o limite do conteúdo com o padding.
+- Para usar a forma abreviada da propriedade background devemos passar os valores numa certa sequência, que é a seguinte
 
-- A propriedade *background-clip* serve para dizermos onde a imagem deve ser cropada, caso a imagem seja maior que o elemento, podemos passar valores iguais ao do *background-origin*, como: __content-box__, __padding-box__, __border-box__. Por padrão é definido como __border-box__, então quando a imagem é maior que o elemento, é cropada na bordar do elemento. Percebe-se também que dependendo do valor passado ao *background-clip* irá interferir na propriedade *background-origin*.
+        -color -image -position/-size -repeat -origin -clip -attachment
 
-- A propriedade *background-attachment* é raramente usada, mas é interessante, pois basicamente ela serve pra dizer se a imagem de background vai scrollar junto com o conteúdo ou ficará fixa na tela. Então se colocarmos o valor __fixed__, o elemento ficará fixo na tela, e só irá desaparecer quando distancia entre a borda oposta ao inicio do elemento (isso aqui, vai depender do eixo) e a borda inicial do elemento que tem o scroll forem menor que a imagem.
+- Mas então, mesmo que eu só vá passar uma imagem, eu tenho que passar uma cor por causa dela ser a primeiro valor pedido?
+  - É possível passar os dois ao mesmo tempo, porém não é obrigatório, se colocarmos somente a imagem, que é via **url()**, a propriedade entenderá que esse tipo de valor não se encaixa na posição _cor_, então ele passa para a proxima que de fato é a imagem, assim funciona com todos os outros valores a serem passados também.
+
+---
+
+    background: url("freedom.jpg") 50% top/cover padding-box border-box;
+
+É O MESMO QUE:
+
+    background: url("freedom.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% top;
+    background-origin: padding-box;
+    background-clip: border-box;
