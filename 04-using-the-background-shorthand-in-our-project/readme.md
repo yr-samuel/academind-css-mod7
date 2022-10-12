@@ -1,0 +1,7 @@
+## Aplicando background-origin, background-clip e background-attachment
+
+- O *background-origin* é bem parecido com a propriedade *box-sizing*, ela diz até onde a imagem de fundo deve contabilizar para poder preencher o elemento, por padrão é definido como __padding-box__, onde a imagem preencherá o elemento até chegar no limite do padding com a borda, temos também o valor __border-box__ onde a imagem preencherá o elemento até o limite da borda com a margem, e por fim temos o __content-box__ que é o limite do conteúdo com o padding.
+
+- A propriedade *background-clip* serve para dizermos onde a imagem deve ser cropada, caso a imagem seja maior que o elemento, podemos passar valores iguais ao do *background-origin*, como: __content-box__, __padding-box__, __border-box__. Por padrão é definido como __border-box__, então quando a imagem é maior que o elemento, é cropada na bordar do elemento. Percebe-se também que dependendo do valor passado ao *background-clip* irá interferir na propriedade *background-origin*.
+
+- A propriedade *background-attachment* é raramente usada, mas é interessante, pois basicamente ela serve pra dizer se a imagem de background vai scrollar junto com o conteúdo ou ficará fixa na tela. Então se colocarmos o valor __fixed__, o elemento ficará fixo na tela, e só irá desaparecer quando distancia entre a borda oposta ao inicio do elemento (isso aqui, vai depender do eixo) e a borda inicial do elemento que tem o scroll forem menor que a imagem.
