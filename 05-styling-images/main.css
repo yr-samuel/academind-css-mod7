@@ -1,12 +1,5 @@
 #product-overview {
-  background: url("freedom.jpg") 50% top/cover padding-box border-box;
-  /* background: url("freedom.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% top;
-  background-origin: padding-box;
-  background-clip: border-box; */
-
+  background: url("images/freedom.jpg") 50% top/cover padding-box border-box;
   border: 5px dashed red;
   width: 100%;
   height: 528px;
